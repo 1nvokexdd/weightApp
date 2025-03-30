@@ -11,6 +11,9 @@ import com.example.weight.service.DailyMealServiceDAO;
 import com.example.weight.service.MealServiceDAO;
 import com.example.weight.service.MealUseServiceDAO;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -23,12 +26,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RequiredArgsConstructor
 @RestController
+@Tag(name = "meal-controller" , description = "controller for add daily meal and for add meal")
 public class MealController {
     private final MealUseServiceDAO mealUseService;
     private final MealServiceDAO mealService;
 
 
     @PostMapping("/add-daily-meal")
+    @Operation(summary = "Add daily meal " ,description = "add daily meal")
+    @ApiResponse(responseCode = "201", description = "daily meal created")
+    @ApiResponse(responseCode = "400",description = "daily meal not created ")
     public ResponseEntity<?> addDailyMeal(@Valid@RequestBody MealUserDTO dto) {
         
         try {
@@ -40,6 +47,9 @@ public class MealController {
     
 
     @PostMapping("/add-meal")
+    @Operation(summary = "Add  meal " ,description = "add  meal")
+    @ApiResponse(responseCode = "201", description = " meal created")
+    @ApiResponse(responseCode = "400",description = " meal not created ")
     public ResponseEntity<?> addMeal(@Valid@RequestBody MealDTO dto) {
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body(mealService.create(dto));
