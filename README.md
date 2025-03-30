@@ -39,7 +39,7 @@
 ```json
 
 {
-  "userId": "8",
+  "userId": "1",
   "date": "2025-03-30",
   "mealIds": [1, 2]
 }
@@ -108,10 +108,10 @@ Backend: Spring Boot 3.x
       "id": 1,
       "user": {
         "id": 8,
-        "name": "alex",
-        "email": "alex@gmail.com",
-        "age": 20,
-        "weight": 80.0,
+        "name": "Ivan Ivanov",
+        "email": "ivan@example.com",
+        "age": 30,
+        "weight": 75.5,
         "height": 180.0,
         "target": "Maintenance",
         "calorie_norm": 1910.36
