@@ -9,7 +9,6 @@
 **Добавление пользователя:**
 ```json
 {
-  "id": 1,
   "name": "Ivan Ivanov",
   "email": "ivan@example.com",
   "age": 30,
